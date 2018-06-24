@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Hello world app';
+  title = 'User Details';
+
+  userClicked($event) {
+  	console.log($event);
+  }
 }

@@ -1,4 +1,4 @@
 <div class="container">
-	<h1>Users List</h1>
-	<app-users></app-users>
+	<h1>Users</h1>
+	<app-users [title]="title" (msg)="userClicked($event)"></app-users>
 </div>

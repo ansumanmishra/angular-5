@@ -1,6 +1,18 @@
-<div class="users-list-block">
-	<div *ngFor="let user of usersList" class="float-left users-block">
-		<img src="{{user.picture.large}}" alt="">
-		<a href="">{{user.name.title | uppercase}} {{user.name.first}} {{user.name.last}}</a>
-	</div>
+<div class="users-list-block float-left">
+	<span *ngIf="!usersList">loading... <br></span>
+	<span *ngIf="error">{{error}}</span>
+	<table class="table">
+		<tr *ngFor="let user of usersList">
+			<td><a href="#" class="user-photo"><img src="{{user.picture.thumbnail}}" alt="" (click)="showUserDetails(user.login.username)"></a>
+			<a href="">{{user.name.title | uppercase}} {{user.name.first}} {{user.name.last}}</a></td>
+		</tr>
+	</table>
+</div>
+
+<div *ngIf="userInfo">
+	<h2 hidden>{{title}}</h2>
+	<h3><img src="{{userInfo.picture.large}}" alt="" />  {{userInfo.name.first | uppercase}} {{userInfo.name.last | uppercase}}</h3>
+	<h6>Gender: {{userInfo.gender}}</h6>
+	<h6>Location: {{userInfo.location.street}}, {{userInfo.location.city}}, {{userInfo.location.state}} </h6>
+	<h6>Email: {{userInfo.email}}</h6>
 </div>

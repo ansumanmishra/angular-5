@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -59,7 +62,11 @@ export class UsersService {
   	return this.usersList;
   }
 
-  getUsersList() {
-  	return this.http.get('https://randomuser.me/api/?results=10');
+  getUsersList(): Observable {
+  	return this.http
+           .get('https://randomuser.me/api/?results=10').pipe(
+           .catchError(err => throwError(err.message))
+           )
+             
   }
 }
