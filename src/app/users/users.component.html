@@ -1,0 +1,6 @@
+<div class="users-list-block">
+	<div *ngFor="let user of usersList" class="float-left users-block">
+		<img src="{{user.picture.large}}" alt="">
+		<a href="">{{user.name.title | uppercase}} {{user.name.first}} {{user.name.last}}</a>
+	</div>
+</div>

@@ -1,0 +1,11 @@
+.users-list-block {
+	border: 1px solid gray;
+	border-radius: 3px;
+	overflow: hidden;
+	padding: 5px;
+}
+
+.users-block {
+	width: 29%;
+	margin-bottom: 10px;
+}
