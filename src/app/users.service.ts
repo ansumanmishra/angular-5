@@ -62,10 +62,10 @@ export class UsersService {
   	return this.usersList;
   }
 
-  getUsersList(): Observable {
+  getUsersList() {
   	return this.http
            .get('https://randomuser.me/api/?results=10').pipe(
-           .catchError(err => throwError(err.message))
+           //.catchError(err => throwError(err.message))
            )
              
   }

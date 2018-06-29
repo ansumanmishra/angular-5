@@ -3,8 +3,8 @@
 	<span *ngIf="error">{{error}}</span>
 	<table class="table">
 		<tr *ngFor="let user of usersList">
-			<td><a href="#" class="user-photo"><img src="{{user.picture.thumbnail}}" alt="" (click)="showUserDetails(user.login.username)"></a>
-			<a href="">{{user.name.title | uppercase}} {{user.name.first}} {{user.name.last}}</a></td>
+			<td><a class="user-photo"><img src="{{user.picture.thumbnail}}" alt="" (click)="showUserDetails(user.login.username)"></a>
+			<a (click)="showUserDetails(user.login.username)">{{user.name.title | uppercase}} {{user.name.first}} {{user.name.last}}</a></td>
 		</tr>
 	</table>
 </div>

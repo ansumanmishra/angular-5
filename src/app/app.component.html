@@ -1,4 +1,16 @@
 <div class="container">
+	<h1>My Angular App</h1>
+
+	<nav>
+		<a routerLink="/users" routerLinkActive="active">Users</a> | 
+		<a routerLink="/employee" routerLinkActive="active">Employee</a>
+	</nav>
+	
+	<p>
+		<router-outlet></router-outlet>
+	</p>
+</div>
+<!-- <div class="container">
 	<h1>Users</h1>
 	<app-users [title]="title" (msg)="userClicked($event)"></app-users>
-</div>
+</div> -->

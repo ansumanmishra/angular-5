@@ -1,0 +1,41 @@
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Add Employee</h4>
+    <div class="card-text">
+    	<form #empForm="ngForm" (ngSubmit)="saveEmployee(empForm)">
+	    	<div class="form-group">
+	    		<label for="name">Name</label>
+				<input type="text" class="form-control"id="name" name="name" [(ngModel)]="emp.name" />
+			</div>
+			<div class="form-group">
+				<label for="email">Email</label>
+				<input type="text" class="form-control" id="email" name="email" [(ngModel)]="emp.email" />
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-primary">SAVE</button>
+			</div>
+		</form>
+    </div>
+  </div>
+</div>
+<p></p>
+<div class="card">
+	<div class="card-body">
+	    <h4 class="card-title">Employee List</h4>
+	    <span *ngIf="empList.length < 1">No Employee(s) found!</span>
+		<table class="table" *ngIf="empList.length > 0">
+			<thead>
+				<tr>
+					<td><b>Employee name</b></td>
+					<td><b>Employee email</b></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let emp of empList">
+					<td>{{emp.name}}</td>
+					<td>{{emp.email}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

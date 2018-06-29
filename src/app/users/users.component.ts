@@ -23,9 +23,7 @@ export class UsersComponent implements OnInit {
   				err => this.error = err);
   }
 
-  showUserDetails(username) {
-  	//e.preventDefault();
-  	
+  showUserDetails(username, e) {  	
   	let user = this.usersList.filter( user => {
   		return user.login.username === username;
   	});
