@@ -1,0 +1,23 @@
+<h3>Pending</h3>
+<div>
+	<ul class="list-group">
+		<li *ngFor="let pendingTodo of pendingTodos" class="list-group-item"> <input type="checkbox" name="todoChk" value="{{pendingTodo.status}}" [checked]="pendingTodo.status === 'Completed'" (change)="updateTodoStatus(pendingTodo, $event)"> {{ pendingTodo.desc }} <a href="javascript: void(0)" class="float-right" (click)="deleteTodo(pendingTodo)"> X </a></li>
+	</ul>
+</div>
+<div class="float-right"><button (click)="addMoreTodo()" class="btn">Add More</button></div>
+<div class="addTodoBlock" *ngIf="addMore">
+	<div class="form-group">
+		<input type="" name="todo" [(ngModel)]="todo" class="form-control" placeholder="Enter todo">
+	</div>
+	<div class="form-group">
+		<button class="btn btn-primary" (click)="addTodo()" [disabled]="!todo">Save</button>
+	</div>
+</div>
+<div class="todoListing-block">
+	<h3>Completed</h3>
+	<div>
+		<ul class="list-group">
+			<li *ngFor="let completedTodo of completedTodos" class="list-group-item"> <s>{{ completedTodo.desc }}</s> <a href="javascript: void(0)" class="float-right" (click)="deleteTodo(completedTodo)"> X </a></li>
+		</ul>
+	</div>
+</div>
