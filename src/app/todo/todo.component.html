@@ -1,4 +1,3 @@
-<h3>Pending</h3>
 <div>
 	<ul class="list-group">
 		<li *ngFor="let pendingTodo of pendingTodos" class="list-group-item"> <input type="checkbox" name="todoChk" value="{{pendingTodo.status}}" [checked]="pendingTodo.status === 'Completed'" (change)="updateTodoStatus(pendingTodo, $event)"> {{ pendingTodo.desc }} <a href="javascript: void(0)" class="float-right" (click)="deleteTodo(pendingTodo)"> X </a></li>
